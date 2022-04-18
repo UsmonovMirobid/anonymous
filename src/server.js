@@ -20,6 +20,7 @@ const bot = new TelegramBot(TOKEN, {
 const router = express.Router()
 
 
+
 router.post('/login', (req, res)=> {
     const { name, password } = req.body
     
@@ -29,7 +30,9 @@ router.post('/login', (req, res)=> {
 
 
 app.use(router)
-
+app.get('/', (_, res)=>{
+    res.send('ok')
+})
 
 
 app.use('/login', (req, res)=> {
